@@ -1,3 +1,6 @@
+### NAME: MOHANRAJ.S
+### REGISTER NO: 212224100036
+
 # Experiment 1: Entity-Relationship (ER) Diagram
 
 ## 🎯 Objective:
