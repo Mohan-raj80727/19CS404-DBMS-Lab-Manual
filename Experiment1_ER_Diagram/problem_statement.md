@@ -48,25 +48,44 @@ Design a database for patient management, appointments, medical records, and bil
 # ER Diagram Submission - Student Name
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+### Hospital Database:
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![Screenshot 2025-04-29 084010](https://github.com/user-attachments/assets/c629f368-94e7-4d7c-8268-7f412b97723a)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
+ Entity1: Patients
+ Entity2: Employee
+ Entity3: Doctor
+ Entity4: Nurse
+ Entity5: Receptionalist
+ Entity6: Records
+ Entity7: Bills
+ Entity8: Test Reports
+ Entity9: Rooms
 ...
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
+- Relationship1 (Patients, Doctors)
 - Relationship2 (Cardinality, Participation)
 ...
 
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+### Extension (Prerequisite / Billing):
+This ER diagram represents a hospital management system, detailing the relationships between various entities involved in hospital operations. The central entity is the Patient, identified by attributes such as patient ID, name, age, gender, date of birth, and mobile number. Patients consult Doctors, who are specialized Employees with additional attributes like department and qualification. Doctors, along with Nurses and Receptionists, fall under the general Employee entity through an "ISA" relationship, which includes shared attributes such as employee ID, name, gender, salary, mobile number, and address details (city, state, pin code).
 
-## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+Patients are assigned to Rooms, which have attributes like room ID, type, capacity, and availability. A "Governs" relationship indicates that one room can host multiple patients. Additionally, each patient can receive Bills (identified by bill ID and amount) and undergo various Test Reports, which include test type, result, and reference ID, and are linked back to the patient through their ID.
 
-## RESULT
+Receptionists are responsible for maintaining Records, which include record number and appointment number, establishing a link between administrative staff and patient data. Overall, the diagram provides a comprehensive view of the interactions and data flow within a hospital system, covering medical, administrative, and infrastructural aspects.
+
+### Design Choices:
+This ER diagram is designed to show how different parts of a hospital system are connected. The main entities like Patient, Doctor, Nurse, Receptionist, Room, Bill, and Test Report are chosen because they represent real people or things in a hospital.
+We use an Employee entity for all staff members and connect Doctor, Nurse, and Receptionist to it using "ISA" to avoid repeating common details like name, salary, and address.
+Relationships such as Consults (between Patient and Doctor), Assigned (Doctor to Patient), and Governs (Room to Patient) are used to show how these people and things interact.
+Some assumptions are made, like:
+One room can have many patients.
+A doctor can consult with multiple patients, but only up to 2 at a time.
+This setup helps organize hospital data clearly and logically, just like it would work in real life.
+
+### RESULT:
+The ER diagram successfully models the hospital system by clearly representing entities, their attributes, and real-life relationships for efficient data management.
