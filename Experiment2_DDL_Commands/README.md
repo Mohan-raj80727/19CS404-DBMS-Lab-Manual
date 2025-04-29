@@ -1,8 +1,6 @@
 # NAME : MOHANRAJ.S
 # REG NO: 212224100036
-
 # Experiment 2: DDL Commands
-
 ## AIM
 To study and implement DDL commands and different types of constraints.
 
