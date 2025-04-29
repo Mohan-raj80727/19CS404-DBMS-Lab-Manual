@@ -1,6 +1,3 @@
-### NAME: MOHANRAJ.S
-### REGISTER NO: 212224100036
-
 # Experiment 1: Entity-Relationship (ER) Diagram
 
 ## 🎯 Objective:
@@ -48,7 +45,9 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Student Name:
+### NAME: MOHANRAJ.S
+### REGISTER NO: 212224100036
 
 ## Scenario Chosen:
 ### Hospital Database:
