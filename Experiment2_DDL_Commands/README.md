@@ -224,5 +224,6 @@ CREATE TABLE Table_Name (
 ![Output10](output.png)
 
 
+
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
