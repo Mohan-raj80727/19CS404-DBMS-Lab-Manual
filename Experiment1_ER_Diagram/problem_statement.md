@@ -69,16 +69,59 @@ Design a database for patient management, appointments, medical records, and bil
 ...
 
 ## Relationships and Constraints:
-- Relationship1 (Patients, Doctors)
-- Relationship2 (Cardinality, Participation)
-...
+
+Relationships:
+1. Consults (Patient ↔ Doctor)
+A patient consults one or more doctors
+A doctor can consult up to 2 patients at a time
+
+3. Assigned (Patient → Doctor)
+Patients are assigned to specific doctors for treatment
+
+3. Governs (Room → Patients)
+One room can accommodate multiple patients
+A patient is assigned to one room
+
+4. Hosts (Room → Bill)
+A room is associated with one or more bills
+
+5. Maintains (Receptionist → Record)
+Receptionists maintain records containing appointment and patient info
+
+6. Has (Patient → Test Report)
+A patient can have multiple test reports
+
+7. ISA Relationship (Employee → Doctor/Nurse/Receptionist)
+Specialization of employees into specific roles
+
+Constraints:
+Cardinality Constraints:
+A doctor can consult up to 2 patients at a time
+A room can be assigned to many patients
+Each patient is assigned to one room
+Each patient can have many bills and test reports
+Participation Constraints:
+Patients must be linked to at least one doctor and room
+Receptionists must be linked to at least one record
 
 ### Extension (Prerequisite / Billing):
-This ER diagram represents a hospital management system, detailing the relationships between various entities involved in hospital operations. The central entity is the Patient, identified by attributes such as patient ID, name, age, gender, date of birth, and mobile number. Patients consult Doctors, who are specialized Employees with additional attributes like department and qualification. Doctors, along with Nurses and Receptionists, fall under the general Employee entity through an "ISA" relationship, which includes shared attributes such as employee ID, name, gender, salary, mobile number, and address details (city, state, pin code).
+### Extension (Prerequisite / Billing) – Simple Explanation:
+To extend the ER diagram with a Billing prerequisite, we can add more detail to the billing process, which is an important part of hospital management.
+New/Extended Entities and Attributes:
 
-Patients are assigned to Rooms, which have attributes like room ID, type, capacity, and availability. A "Governs" relationship indicates that one room can host multiple patients. Additionally, each patient can receive Bills (identified by bill ID and amount) and undergo various Test Reports, which include test type, result, and reference ID, and are linked back to the patient through their ID.
+1. Billing (extended)
+Existing: Bill_ID, Amount
+Add: Date, Payment_Mode (Cash/Card/Online), Status (Paid/Unpaid)
 
-Receptionists are responsible for maintaining Records, which include record number and appointment number, establishing a link between administrative staff and patient data. Overall, the diagram provides a comprehensive view of the interactions and data flow within a hospital system, covering medical, administrative, and infrastructural aspects.
+2. Prerequisite:
+A Patient must have a Test Report or Doctor Consultation before a bill is generated.
+
+A Bill is only created after services like room assignment, consultation, or testing.
+
+Updated Relationships:
+Patient → Billing: A patient can have multiple bills.
+Billing ← Test Report / Consultation / Room: A bill depends on these services.
+Constraint: A bill cannot exist without at least one of these services being completed.
 
 ### Design Choices:
 This ER diagram is designed to show how different parts of a hospital system are connected. The main entities like Patient, Doctor, Nurse, Receptionist, Room, Bill, and Test Report are chosen because they represent real people or things in a hospital.
