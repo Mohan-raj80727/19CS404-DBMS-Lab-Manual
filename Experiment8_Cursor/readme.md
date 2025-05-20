@@ -1,3 +1,5 @@
+# NAME MOHANRAJ.S
+# 212224100036
 # Experiment 8: PL/SQL Cursor Programs
 
 ## AIM
